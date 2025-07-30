@@ -21,7 +21,9 @@ I didn't finish the History page. I couldn't finish it in time. While I was work
 -ng g c name (build component)
 
 ## sonarqube
-<img width="1272" height="565" alt="Screenshot 2568-07-30 at 11 37 16" src="https://github.com/user-attachments/assets/4afbe4c9-a036-44f5-9fc3-ea0215a9bba7" />
+<img width="1071" height="480" alt="Screenshot 2568-07-30 at 12 05 50" src="https://github.com/user-attachments/assets/3b63051f-9e78-4e80-9a33-b02be2329e65" />
+
+
 
 
 
