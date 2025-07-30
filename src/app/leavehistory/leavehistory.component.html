@@ -1,24 +1,26 @@
 <div class="card p-3">
     <h5>สถิติการลาประจำเดือน</h5>
-
-    <div echarts [options]="chartOptions" class="echart" style="height: 400px; width: 100%;"></div>
     <div class="row my-3">
         <div class="col-md-3">
             <label>เลือกเดือน</label>
-            <input type="month" class="form-control" [(ngModel)]="selectedMonth">
+            <input type="month" class="form-control">
+        </div>
+        <div class="col-md-3">
+            <label>แผนก</label>
+            <select class="form-control" >
+                <option value="ทั้งหมด">ทุกแผนก</option>
+                <option ></option>
+            </select>
+        </div>
+        <div class="col-md-3 align-self-end">
+            <button class="btn btn-success">Export Excel</button>
         </div>
     </div>
 
-    <div class="col-md-3">
-        <label>แผนก</label>
-        <select class="form-control" [(ngModel)]="selectedDepartment">
-            <option value="ทั้งหมด">ทุกแผนก</option>
-            <option *ngFor="let dept of departments" [value]="dept">{{ dept }}</option>
-        </select>
-    </div>
-
-    <div class="col-md-3 align-self-end">
-        <button class="btn btn-success" (click)="exportExcel()">Export Excel</button>
+    
+    <div>
+        <canvas baseChart >
+        </canvas>
     </div>
 
     <table class="table mt-4">
@@ -33,14 +35,6 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let record of filteredLeaveRecords">
-                <td>{{ record.name }}</td>
-                <td>{{ record.department }}</td>
-                <td>{{ record.sickLeave }}</td>
-                <td>{{ record.vacationLeave }}</td>
-                <td>{{ record.personalLeave }}</td>
-                <td>{{ record.total }}</td>
-            </tr>
         </tbody>
     </table>
 </div>

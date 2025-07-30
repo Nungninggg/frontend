@@ -8,6 +8,9 @@
     padding: 1rem;
     margin-bottom: 1rem;
     background-color: #fff;
+    width: 70%;
+    padding: 15px 28px;
+    margin: auto;
 }
 
 textarea {
@@ -35,26 +38,6 @@ textarea {
     color: #fff;
 }
 
-.card {
-    width: 70%;
-    padding: 15px 28px;
-    margin: auto;
-}
-
-.badge.pending {
-    background-color: gold;
-    color: black;
-}
-
-.badge.approved {
-    background-color: green;
-    color: white;
-}
-
-.badge.denied {
-    background-color: red;
-    color: white;
-}
 
 .badge {
     padding: 4px 8px;
@@ -76,4 +59,6 @@ textarea {
 .badge.denied {
     background-color: red;
     color: white;
+    background-color: gold;
+    color: black;
 }
