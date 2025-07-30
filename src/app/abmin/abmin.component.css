@@ -1,0 +1,79 @@
+.leave-request-container {
+    margin: 1rem 0;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #fff;
+}
+
+textarea {
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    padding: 0.5rem;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+
+.btn.approve {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn.deny {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.card {
+    width: 70%;
+    padding: 15px 28px;
+    margin: auto;
+}
+
+.badge.pending {
+    background-color: gold;
+    color: black;
+}
+
+.badge.approved {
+    background-color: green;
+    color: white;
+}
+
+.badge.denied {
+    background-color: red;
+    color: white;
+}
+
+.badge {
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.badge.pending {
+    background-color: gold;
+    color: black;
+}
+
+.badge.approved {
+    background-color: green;
+    color: white;
+}
+
+.badge.denied {
+    background-color: red;
+    color: white;
+}

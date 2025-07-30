@@ -1,0 +1,58 @@
+<div class="card mb-3">
+    <div class="card-body d-flex align-items-center">
+        <i class="bi bi-calendar2-week fs-2 text-primary me-3"></i>
+        <div>
+            <h5 class="mb-0">วันลาคงเหลือ</h5>
+            <p class="fs-4 fw-bold">10 วัน</p> <!-- คงเหลือคำนวณได้จาก 20 - totalLeaveDays ถ้ามีสิทธิ์ลา 20 -->
+        </div>
+    </div>
+</div>
+
+<div class="card mb-3">
+    <div class="card-body d-flex align-items-center">
+        <i class="bi bi-clock fs-2 text-warning me-3"></i>
+        <div>
+            <h5 class="mb-0">ลาที่รออนุมัติ</h5>
+            <p class="fs-4 fw-bold">{{ pendingCount }} รายการ</p>
+        </div>
+    </div>
+</div>
+
+<div class="card mb-3">
+    <div class="card-body d-flex align-items-center">
+        <i class="bi bi-file-earmark-text fs-2 text-success me-3"></i>
+        <div>
+            <h5 class="mb-0">ลาทั้งหมดปีนี้</h5>
+            <p class="fs-4 fw-bold">{{ totalLeaveDays }} วัน</p>
+        </div>
+    </div>
+</div>
+
+<!-- ตารางรายการล่าสุด -->
+<table class="table mt-4">
+    <thead>
+        <tr>
+            <th>รายการล่าสุด</th>
+            <th>ประเภท</th>
+            <th>จำนวนวัน</th>
+            <th>สถานะ</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let leave of recentRequests">
+            <td>{{ leave.startDate }} - {{ leave.endDate }}</td>
+            <td>{{ leave.leaveType }}</td>
+            <td>{{ leave.days }} วัน</td>
+            <td>
+                <span [ngClass]="{
+    'badge bg-warning text-dark': leave.status.toUpperCase() === 'PENDING',
+    'badge bg-success': leave.status.toUpperCase() === 'APPROVED',
+    'badge bg-danger': leave.status.toUpperCase() === 'DENIED'
+}">
+    {{ getStatusLabel(leave.status) }}
+</span>
+
+            </td>
+        </tr>
+    </tbody>
+</table>

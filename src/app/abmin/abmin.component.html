@@ -1,0 +1,41 @@
+<div *ngFor="let request of leaveRequests" class="card">
+    <div class="header">
+        <div>
+            <strong>{{ request.name }}</strong>
+            <div>{{ request.department }}</div>
+        </div>
+
+
+        <span class="badge" [ngClass]="{
+  'pending': request.status?.toLowerCase() === 'pending',
+  'approved': request.status?.toLowerCase() === 'approved',
+  'denied': request.status?.toLowerCase() === 'denied'
+}">
+            {{
+            request.status?.toLowerCase() === 'pending' ? 'รออนุมัติ' :
+            request.status?.toLowerCase() === 'approved' ? 'อนุมัติแล้ว' :
+            request.status?.toLowerCase() === 'denied' ? 'ไม่อนุมัติ' : request.status
+            }}
+        </span>
+
+    </div>
+
+    <!-- ส่วนอื่นเหมือนเดิม -->
+    <div class="details">
+        <div><strong>ประเภทการลา:</strong> {{ request.leaveType }}</div>
+        <div><strong>จำนวนวัน:</strong> {{ request.days }} วัน</div>
+        <div><strong>วันที่เริ่มต้น:</strong> {{ request.startDate }}</div>
+        <div><strong>วันสิ้นสุด:</strong> {{ request.endDate }}</div>
+        <div><strong>เหตุผลการลา:</strong> {{ request.reason }}</div>
+    </div>
+
+    <div class="comment-section">
+        <label>💬 ความคิดเห็น</label>
+        <textarea [(ngModel)]="request.comment" placeholder="เพิ่มความคิดเห็น (ถ้ามี)"></textarea>
+    </div>
+
+    <div class="actions">
+        <button class="btn deny" (click)="deny(request.id)">✖ ไม่อนุมัติ</button>
+        <button class="btn approve" (click)="approve(request.id)">✔ อนุมัติ</button>
+    </div>
+</div>
