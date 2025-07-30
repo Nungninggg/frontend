@@ -1,27 +1,31 @@
-# Frontend
+# Leave System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.20.
+# Description
 
-## Development server
+The home page has a form to fill out. You can view information about the leave you've requested, how many days, and how many days you have remaining. There's also an Approved and Disapproved page. The dashboard shows the five most recent requests, pending approval, approved, and disapproved. When you fill out the leave request form, it will be added to Databest.
+I didn't finish the History page. I couldn't finish it in time. While I was working, I got an error, so I couldn't complete the History page.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## install
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular 18
+-npm install bootstrap
 
-## Build
+## Add like in index.html
+``` <link rel="icon" type="image/x-icon" href="favicon.ico"><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"> ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Run
 
-## Running unit tests
+-ng serve (run)
+-ng new name (create new Angular)
+-ng g c name (build component)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## sonarqube
+<img width="1071" height="480" alt="Screenshot 2568-07-30 at 12 05 50" src="https://github.com/user-attachments/assets/3b63051f-9e78-4e80-9a33-b02be2329e65" />
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+
