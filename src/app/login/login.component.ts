@@ -3,17 +3,28 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
+interface MockUser {
+  email: string;
+  password: string;
+}
+
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']   // แก้เป็น styleUrls
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
   email = '';
   password = '';
   private router = inject(Router);
+
+  
+  private mockUsers: MockUser[] = [
+    { email: 'ning@gmail.com', password: 'ning123' },
+    { email: 'admin@gmail.com', password: 'admin456' }
+  ];
 
   login() {
     if (!this.email || !this.password) {
@@ -24,13 +35,23 @@ export class LoginComponent {
       alert('รูปแบบอีเมลไม่ถูกต้อง');
       return;
     }
-    // ถ้าเช็คผ่าน ก็เซฟสถานะและไป Dashboard
+
+    
+    const valid = this.mockUsers.some(u =>
+      u.email === this.email && u.password === this.password
+    );
+
+    if (!valid) {
+      alert('อีเมลหรือรหัสผ่านไม่ถูกต้อง');
+      return;
+    }
+
+    
     localStorage.setItem('loggedIn', 'true');
     this.router.navigate(['/dashboard']);
   }
 
   private validateEmail(email: string): boolean {
-    // regex ง่ายๆ ตรวจ @ และ domain
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
   }
