@@ -1,0 +1,19 @@
+
+:host {
+    display: block;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8bbd0 0%, #ec407a 100%);
+}
+
+.login-wrapper {
+    width: 100%;
+    padding: 2rem 1rem;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    background: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
